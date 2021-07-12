@@ -31,23 +31,15 @@ function App() {
 
   
   const consultarApi = async () => {
-    // manera de hacerla comunmente y sin el async await
-    // const api = fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes');
-    // const respuesta = api.then( resultado => resultado.json() );
-    // respuesta.then( data => console.log(data[0]) )
 
-    // HACERLO CON ASYNC AWAIT
     const respuesta = await fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes');
     const datos = await respuesta.json();
     // console.log(datos);
 
-    // le pasamos los datos de la respuesta a la api al state, muy importante es que en este caso como es una unica posicion hay que pasarle la llaver del objeto en este caso es un 0 y se pasa entre corchetes porque es un array
     guardarFrase(datos[0]);
   };
 
-  // recordar que es useEffect es similar a un .Ready en jquery y un DOMContenLoaded en js
   useEffect( () => {
-    // una vez que cargue la pagina llamara la funcion
     consultarApi();
   }, [])
 

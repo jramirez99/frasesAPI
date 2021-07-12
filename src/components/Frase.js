@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-// como es una sintaxis parecida a sass es que se pede poner estilos de esta manera (anidados)
 const Contenedor = styled.div`
     background-color: white;
     border-radius: 0%.5rem;
@@ -39,13 +38,11 @@ const Contenedor = styled.div`
 
 const Frase = ( { frase } ) => {
 
-    // para que no muestre el contenedor cuando carga la pagina, en este caso no lo voy a utilizar porque voy a consultar la api una vez que cargue la pagina y eso es con un useEffect
     // if ( Object.keys(frase).length === 0 ) return null;
 
-    // destructurin a la respuesta de la api
+    // destructuring a la respuesta de la api
     const { author, quote } = frase;
 
-    // o tambien se puede imprimir como frase.author y frase.quote
     return (  
         <Contenedor>
             <h1> { quote } </h1>
